@@ -14,7 +14,7 @@
                     <p class="text-center">Register with FoodOnline marketplace and get more customers.</p>
                     <hr>
                     <div id="restaurant-sets-holder">
-                        <form action= "{% url 'registerUser' %}" class="form-fields-set foodbakery-dev-restaurant-form" method="post">
+                        <form action= "{% url 'registerVendor' %}" class="form-fields-set foodbakery-dev-restaurant-form" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <ul class="register-add-restaurant-tab-container restaurant-information-tab-container">
                                 <li>
@@ -33,16 +33,16 @@
                                                                 <label>Last name</label>{{form.last_name}}
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="field-holder">
-                                                                <label>Restaurant name </label><input type="text" class="foodbakery-dev-req-field" id="foodbakery_restaurant_title_59054637" name="foodbakery_restaurant_title">
+                                                                <label>Restaurant name </label>{{v_form.vendor_name}}
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="field-holder">
-                                                                <label>Restaurant phone</label><input type="text" id="foodbakery_restaurant_phone_59054637" name="foodbakery_restaurant_contact_phone">
+                                                                <label>License</label>{{v_form.vendor_license}}
                                                             </div>
-                                                        </div> -->
+                                                        </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="field-holder">
                                                                 <label>Email Address</label>{{form.email}}
